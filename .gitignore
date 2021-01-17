@@ -12,3 +12,7 @@ venv/
 
 # VS Code
 .vscode/*
+
+# Files
+secrets.py
+
