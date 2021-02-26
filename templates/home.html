@@ -38,7 +38,89 @@
                     <br>
                     <p>>_SQLite</p>
             </div>
-            <div class="col-6"></div>   
+            <div class="col-6 ps-5">
+                <h4>Latest GitHub Repo Updates</h4>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Repo</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><a class="link" href="{{repo.0.html_url}}" target="_blank">{{repo.0.name}}</a></td>
+                            <td>
+                                {% if repo.0.description %}
+                                    {{repo.0.description}}
+                                {% else %}
+                                    <p>This repo has no description yet.. Working on it!</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a class="link" href="{{repo.1.html_url}}" target="_blank">{{repo.1.name}}</a></td>
+                            <td>
+                                {% if repo.1.description %}
+                                    {{repo.1.description}}
+                                {% else %}
+                                    <p>This repo has no description yet.. Working on it!</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td><a class="link" href="{{repo.2.html_url}}" target="_blank">{{repo.2.name}}</a></td>
+                            <td>
+                                {% if repo.2.description %}
+                                    {{repo.2.description}}
+                                {% else %}
+                                    <p>This repo has no description yet.. Working on it!</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td><a class="link" href="{{repo.3.html_url}}" target="_blank">{{repo.3.name}}</a></td>
+                            <td>
+                                {% if repo.3.description %}
+                                    {{repo.3.description}}         
+                                {% else %}
+                                    <p>This repo has no description yet.. Working on it!</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td><a class="link" href="{{repo.4.html_url}}" target="_blank">{{repo.4.name}}</a></td>
+                            <td>
+                                {% if repo.4.description %}
+                                    {{repo.4.description}}
+                                {% else %}
+                                    <p>This repo has no description yet.. Working on it!</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                
+                </table>
+                <div class="row">
+                    <div class="col">
+                        
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                </div>
+                    
+                    
+
+
+            </div>   
         </div>               
     </div>
 </div>

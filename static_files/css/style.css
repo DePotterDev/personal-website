@@ -5,9 +5,10 @@
     --darkgreen: #00796B;
 }
 
+/* Basics */
 
 .viewport{
-    height:85vh;
+    height:600px;
 }
 
 .bg-lightgreen{
@@ -78,4 +79,11 @@
 
 .circle{
     border-radius: 50%;
+}
+
+
+/* Footer */
+
+.footer{
+    height:300px;
 }
