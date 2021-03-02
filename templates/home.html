@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% crispy example_form example_form.helper %}
 
 {% block content %}
 
@@ -24,19 +27,20 @@
             <div class="col-2">
                     <h4 class="python">Python</h4>
                     <br>
-                    <p>>_Scrapy</p>
-                    <p>>_Django</p>
-                    <p>>_Django REST Framework</p>
+                    <p><span class="link">>_</span>Scrapy</p>
+                    <p><span class="link">>_</span>Django</p>
+                    <p><span class="link">>_</span>Django REST Framework</p>
             </div>                  
             <div class="col-2">
                     <h4 class="javascript">JavaScript</h4>
                     <br>
-                    <p>>_React</p>
+                    <p><span class="link">>_</span>Cleave.js</p>
+                    <p><span class="link">>_</span>React.js</p>
             </div>
             <div class="col-2">
                     <h4 class="database">Banco de Dados</h4>
                     <br>
-                    <p>>_SQLite</p>
+                    <p><span class="link">>_</span>SQLite</p>
             </div>
             <div class="col-6 ps-5">
                 <h4>Latest GitHub Repo Updates</h4>
@@ -56,6 +60,7 @@
                             <td>
                                 {% if repo.0.description %}
                                     {{repo.0.description}}
+                                    {{repo.0.created_at|date:"c" }}
                                 {% else %}
                                     <p>This repo has no description yet.. Working on it!</p>
                                 {% endif %}
@@ -152,7 +157,7 @@
 <div id="about" class="container py-5 my-5">
     <div class="row">
         <div class="col">
-            <img class="circle" src="" alt="laurens">
+            <img class="circle mx-auto d-block" src="{% static 'media/laurens.jpeg' %}" alt="laurens">
         </div>
         <div class="col">
             <h2 class="title">Sobre  👨‍💻</h2>
@@ -165,6 +170,36 @@
 
     </div>
 </div>
+
+<div class="bg-green py-5">
+    <div class="container mt-5">
+        <div class="px-5 mx-5">
+            <h2 class="ms-5 mb-3 color-darkgreen title">Contato</h2>
+        </div>
+        <div class="row p-5 mx-5 bg-light">
+        <h4 class="ms-5 p-0 display-5">Solte Uma Linha</h4>
+        <p class="ms-5 p-0 pb-5">Eu vou ressonar assim que possível.</p>
+        <div class="col ms-5 p-0">
+            <h3 class="mb-3">Contact info:</h3>
+            <p>depotter.laurens@gmail.com</p>
+            <p>Cellular: 11 96 7750 753</p>
+
+            <h3 class="mb-3">Endereço:</h3>
+            <p>São Paulo, SP, Brasil</p>
+            <p>Zona Sul</p>
+        </div>
+        <div class="col me-5">
+                <form method="POST">
+                    {% csrf_token %}
+                    {% crispy form %}
+                    <button type="submit" class="btn btn-lg btn-darkgreen mt-5">Submit</button>
+                </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 
