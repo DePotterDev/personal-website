@@ -20,6 +20,7 @@
     </div>
 </div>
 
+<!--SKILLS-->
 <div id="skills" class="container py-5 my-5">
     <h2 class="title">Habilidades 💪 </h2>
     <div class="row py-5">
@@ -42,9 +43,10 @@
                     <br>
                     <p><span class="link">>_</span>SQLite</p>
             </div>
+
+<!--GITHUB API-->
             <div class="col-6 ps-5">
                 <h4>Latest GitHub Repo Updates</h4>
-
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -114,21 +116,18 @@
                 
                 </table>
                 <div class="row">
-                    <div class="col">
-                        
+                    <div class="col">                  
                     </div>
                     <div class="col">
                         <p></p>
                     </div>
                 </div>
-                    
-                    
-
-
             </div>   
         </div>               
     </div>
 </div>
+
+<!--PROJECTS-->
 <div class="">
     <div id="projects" class="container py-5 my-5">
         <h2 class="title mb-3">Projetos 🛠</h2>
@@ -153,12 +152,14 @@
     </div>
 </div>
 
-
+<!--ABOUT SECTION-->
 <div id="about" class="container py-5 my-5">
     <div class="row">
+<!--LEFT COLUMN-->
         <div class="col">
             <img class="circle mx-auto d-block" src="{% static 'media/laurens.jpeg' %}" alt="laurens">
         </div>
+<!--RIGHT COLUMN-->
         <div class="col">
             <h2 class="title">Sobre  👨‍💻</h2>
             <p>Problem solving minded and creative<br>
@@ -167,10 +168,10 @@
             Worked through my career in sales and as a technical support agent for<br>
             companies like Groupon, Cisco, Belkin and GoDaddy.</p>
         </div>
-
     </div>
 </div>
 
+<!--CONTACT FORM-->
 <div class="bg-green py-5">
     <div class="container mt-5">
         <div class="px-5 mx-5">
@@ -179,6 +180,7 @@
         <div class="row p-5 mx-5 bg-light">
         <h4 class="ms-5 p-0 display-5">Solte Uma Linha</h4>
         <p class="ms-5 p-0 pb-5">Eu vou ressonar assim que possível.</p>
+<!--lEFT COLUMN-->
         <div class="col ms-5 p-0">
             <h3 class="mb-3">Contact info:</h3>
             <p>depotter.laurens@gmail.com</p>
@@ -188,19 +190,17 @@
             <p>São Paulo, SP, Brasil</p>
             <p>Zona Sul</p>
         </div>
-        <div class="col me-5">
+<!--RIGHT COLUMN-->
+            <div class="col me-5">
                 <form method="POST">
                     {% csrf_token %}
                     {% crispy form %}
                     <button type="submit" class="btn btn-lg btn-darkgreen mt-5">Submit</button>
                 </form>
-        </div>
+            </div>
         </div>
     </div>
 </div>
-
-
-
 
 
 {% endblock content %}
