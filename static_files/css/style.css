@@ -109,9 +109,14 @@ ul {
     border-radius: 50%;
 }
 
+/* Blog */
+.page-link{
+    color: var(--darkgreen)
+}
+.page-link:hover{
+    color: #239688;
+}
+
 
 /* Footer */
 
-.footer{
-    height:300px;
-}
