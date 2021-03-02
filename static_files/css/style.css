@@ -16,6 +16,10 @@ ul {
       color: black;
   }
 
+  a:hover{
+      color: #5a2fd1;
+  }
+
 .viewport{
     height:600px;
 }
