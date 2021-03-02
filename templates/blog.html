@@ -2,6 +2,71 @@
 
 {% block content %}
 
+<!--FILTER OPTIONS-->
+<div class="row">
+    <div class="col-3 bg-gray viewport p-5">
+    <h4 class="mb-3">Topics</h4>
+        <a class="btn btn-darkgreen m-1">
+            Django<span class="badge bg-light ms-1 text-dark">4</span>
+        </a>
+        <a type="button" class="btn btn-python m-1 text-light">
+            Python<span class="badge bg-light ms-1 text-dark">8</span>
+        </a>
+        <button type="button" class="btn btn-javascript text-light m-1">
+            JavaScript<span class="badge bg-light ms-1 text-dark">2</span>
+        </button>
+        <button type="button" class="btn btn-react m-1 text-light">
+            React<span class="badge bg-light ms-1 text-dark">5</span>
+        </button>
+    <h4 class="mt-5 mb-3">Latest Added</h4>
+    <ul class="mb-5">
+        <li><a href="#"><span class="link">>_</span>Article 1</a></li>
+        <li><a href="#"><span class="link">>_</span>Article 2</a></li>
+        <li><a href="#"><span class="link">>_</span>Article 3</a></li>
+        <li><a href="#"><span class="link">>_</span>Article 4</a></li>
+    </ul>
 
+    <a data-bs-toggle="collapse" href="#python" role="button" aria-expanded="false" aria-controls="python"><h5>Python</h5></a>
+    <div class="collapse" id="python">
+        <ul>
+            <li><a href="#">Link Python Article 3</a></li>
+            <li><a href="#">Link Python Article 2</a></li>
+            <li><a href="#">Link Python Article 1</a></li>
+        </ul>
+    </div>
+    <a data-bs-toggle="collapse" href="#javascript" role="button" aria-expanded="false" aria-controls="javascript"><h5>JavaScript</h5></a>
+    <div class="collapse" id="javascript">
+        <ul>
+            <li><a href="#">Link JavaScript Article 3</a></li>
+            <li><a href="#">Link JavaScript Article 2</a></li>
+            <li><a href="#">Link JavaScript Article 1</a></li>
+        </ul>
+        
+    </div>
+    <a data-bs-toggle="collapse" href="#react" role="button" aria-expanded="false" aria-controls="react"><h5>React</h5></a>
+    <div class="collapse" id="react">
+        <ul>
+            <li><a href="#">Link React.js Article 3</a></li>
+            <li><a href="#">Link React.js Article 2</a></li>
+            <li><a href="#">Link React.js Article 1</a></li>
+        </ul>    
+    </div>
+
+    </div>
+        <div class="col-9 bg-info viewport">
+            <h4 class="display-1">Blog</h4>
+            <p>This little blog contains documentation, cheatsheets and short tutorials<br>
+            on technologies I am currently working with.</p>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}

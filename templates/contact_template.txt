@@ -1,0 +1,8 @@
+Contact Name:
+{{ subject }}
+
+Email:
+{{ from_email }}
+
+Content:
+{{ message }}

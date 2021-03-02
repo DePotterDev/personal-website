@@ -119,6 +119,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+# Styling forms using bootsrap
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_HOST_USER = 'depotter.laurens@gmail.com'
+EMAIL_HOST_PASSWORD = SECRET_GMAIL
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587

@@ -32,3 +32,8 @@ def home(request):
 
     context = {'repo': repo, 'range': range(4), 'form': ContactForm}
     return render(request, 'home.html', context)
+
+def blog(request):
+    """ Blog """
+
+    return render(request, 'blog.html')
