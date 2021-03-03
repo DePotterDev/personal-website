@@ -35,5 +35,8 @@ def home(request):
 
 def blog(request):
     """ Blog """
-
     return render(request, 'blog.html')
+
+def blog_post(request):
+    """ Blog Post """
+    return render(request, 'blog-post.html')
