@@ -7,19 +7,16 @@
 }
 
 /* Basics */
-ul {
+ul{
     list-style-type: none;
-  }
-
-  a{
-      text-decoration: none;
-      color: black;
-  }
-
-  a:hover{
-      color: #5a2fd1;
-  }
-
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: #5a2fd1;
+}
 .viewport{
     height:600px;
 }
@@ -115,7 +112,6 @@ ul {
 .circle{
     border-radius: 50%;
 }
-
 /* Blog */
 .page-link{
     color: var(--darkgreen)
