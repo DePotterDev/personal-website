@@ -73,6 +73,17 @@ a:hover{
     font-size: 48px;
     font-weight: 300;
 }
+.btn-django{
+    color:#fff;
+    background-color:var(--darkgreen);
+}
+.btn-django:hover{
+    color:#fff;
+    background-color:#0aa190;;
+}
+.django{
+    color:var(--darkgreen)
+}
 .python{
     color: #007bff
 }
@@ -82,7 +93,7 @@ a:hover{
 }
 .btn-python:hover{
     color: #fff;
-    background-color: #288bf5
+    background-color: #4097f3
 }
 .javascript{
     color: #ffc107
@@ -105,6 +116,17 @@ a:hover{
 .btn-react:hover{
     color:#fff;
     background-color: #845fc9;
+}
+.other{
+    color:#dc3545;
+}
+.btn-other{
+    color:#fff;
+    background-color:#dc3545;
+}
+.btn-other:hover{
+    color:#fff;
+    background-color:#df5966;
 }
 .database{
     color: #6f42c1;

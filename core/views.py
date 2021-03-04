@@ -5,11 +5,17 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
+from .models import Blog
+
 
 def home(request):
-    """ Home Page """
+    """ 
+    Home Page
 
-    """ GET API GitHub """
+    GET API GitHub
+    1) repos per page = 5
+    2) sorted by last updated
+    """
     response = requests.get('https://api.github.com/users/depotterdev/repos?per_page=5&sort=updated')
     repo = response.json()
 
@@ -33,10 +39,48 @@ def home(request):
     context = {'repo': repo, 'range': range(4), 'form': ContactForm}
     return render(request, 'home.html', context)
 
+
 def blog(request):
     """ Blog """
-    return render(request, 'blog.html')
+    blog = Blog.objects.order_by('-updated_at')
+    # FILTER OPTIONS ON LANGUAGES
+    python_count = Blog.objects.filter(language='python').count()
+    javascript_count = Blog.objects.filter(language='javascript').count()
+    react_count = Blog.objects.filter(language='react').count()
+    django_count = Blog.objects.filter(language='django').count()
+    other_count = Blog.objects.filter(language='other').count()
+    python = Blog.objects.filter(language='python')
+    javascript = Blog.objects.filter(language='javascript')
+    react = Blog.objects.filter(language='react')
+    django = Blog.objects.filter(language='django')
+    other = Blog.objects.filter(language='other')
 
-def blog_post(request):
+    latest = Blog.objects.order_by('-created_at')[:5]
+
+    context = {
+        'blogs': blog,
+        'python': python,
+        'javascript': javascript,
+        'react': react,
+        'django': django,
+        'other': other,
+        'pc': python_count,
+        'jc': javascript_count,
+        'rc': react_count,
+        'dc': django_count,
+        'oc': other_count,
+        'latest': latest
+        }
+    return render(request, 'blog.html', context)
+
+
+def blog_language(request, language):
+    """ Filter blog posts on language """
+    blog = Blog.objects.filter(language=language)
+    return render(request, 'blog-language.html', {'blogs': blog})
+
+
+def blog_post(request, slug):
     """ Blog Post """
-    return render(request, 'blog-post.html')
+    post = Blog.objects.get(slug=slug)
+    return render(request, 'blog-post.html', {'post':post})
