@@ -70,12 +70,18 @@
                 </ol>
             </nav>
             <h1 class="display-1 mb-3">{{post.title}}</h1>
+            <p>{{post.description}}</p>
             <p class="text-muted mb-5">
+            {% if post.updated_at|time:"H\h i\m" != post.created_at|time:"H\h i\m" %}
             Created: {{post.created_at}}<br>
-            Last updated: 1 mar 2021
+            Last updated: {{post.updated_at}}
+            {% else %}
+            Created: {{post.created_at}}<br>
+            {% endif %}
+
             </p>            
             <p class="pe-5 me-5">
-            {{post.text}}
+            {{post.text.html|safe}}
             </p>
         </div>  
 </div>

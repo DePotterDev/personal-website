@@ -80,7 +80,9 @@
                             <a href="{{blog.get_absolute_url}}">
                                 <div class="card-body bg-green">
                                     <h5 class="card-title">{{blog.title}}</h5>
-                                    <p class="card-text mb-3">{{blog.text|truncatechars:150}}</p>
+                                    {% autoescape on %}
+                                    <p class="card-text mb-3">{{blog.description|truncatechars:150}}</p>
+                                    {% endautoescape %}
                                     <a href="#" class="{{blog.language}}">{{blog.language|capfirst}}</a>
                                 </div>
                             </a>

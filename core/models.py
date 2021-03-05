@@ -1,5 +1,7 @@
 from django.db import models
+from django.db.models.fields import TextField
 from django.shortcuts import reverse
+from django_quill.fields import QuillField
 
 
 class Blog(models.Model):
@@ -13,11 +15,12 @@ class Blog(models.Model):
     )
 
     title = models.CharField(max_length=50)
-    text = models.TextField()
+    description = TextField(max_length=200)
+    text = QuillField()
     language = models.CharField(choices=LANGUAGES_CHOICES, max_length=50)
     slug = models.SlugField()
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)
 
     def __str__(self):
         """ Return a string representation of Blog """

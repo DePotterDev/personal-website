@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'core',
 
     #Third Party Apps
+    'django_quill',
     'crispy_forms',
 ]
 
@@ -122,6 +123,30 @@ STATIC_URL = '/static/'
 # Styling forms using bootsrap
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+# Quill
+""" QUILL_CONFIGS = {
+    'default':{
+        'theme': 'snow',
+        'modules': {
+            'syntax': True,
+            'toolbar': [
+                [
+                    {'font': []},
+                    {'header': []},
+                    {'align': []},
+                    'bold', 'italic', 'underline', 'strike', 'blockquote',
+                    {'color': []},
+                    {'background': []},
+                ],
+                ['code-block', 'link'],
+                ['clean'],
+            ],
+            'image-tooltip': True,
+        }
+    }
+}
+
+ """
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
