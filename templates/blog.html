@@ -1,70 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
 
+{% block content %}
 <div class="row">
 <!--FILTER OPTIONS-->
-    <div class="col-3 bg-gray p-5">
-<!--TOPIC BUTTONS-->
-    <h4 class="mb-3">Topics</h4>
-        <a href="{% url 'core:language' language='python' %}" class="btn btn-python m-1">
-            Python<span class="badge bg-light ms-1 text-dark">{{pc}}</span>
-        </a>
-        <a href="{% url 'core:language' language='django' %}" class="btn btn-django m-1">
-            Django<span class="badge bg-light ms-1 text-dark">{{dc}}</span>
-        </a>
-        <a href="{% url 'core:language' language='javascript' %}" class="btn btn-javascript m-1">
-            JavaScript<span class="badge bg-light ms-1 text-dark">{{jc}}</span>
-        </a>
-        <a href="{% url 'core:language' language='react' %}" class="btn btn-react m-1">
-            React.js<span class="badge bg-light ms-1 text-dark">{{rc}}</span>
-        </a>
-        <a href="{% url 'core:language' language='other' %}" class="btn btn-other m-1">
-            Other<span class="badge bg-light ms-1 text-dark">{{oc}}</span>
-        </a>
-<!--LATEST BLOG POSTS ADDED-->
-    <h4 class="mt-5 mb-3">Latest Added</h4>
-    <ul class="mb-5">
-    {% for x in latest %}
-        <li><a href="{{x.get_absolute_url}}"><span class="link">>_</span>{{x}}</a></li>
-    {% endfor %}
-    </ul>
-<!--SECTION-->
-    <a data-bs-toggle="collapse" href="#python" role="button" aria-expanded="false" aria-controls="python"><h5>Python</h5></a>
-    <div class="collapse" id="python">
-        <ul>
-            {% for x in python %}
-            <li><a href="{{x.get_absolute_url}}">{{x}}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    <a data-bs-toggle="collapse" href="#django" role="button" aria-expanded="false" aria-controls="django"><h5>Django</h5></a>
-    <div class="collapse" id="django">
-        <ul>
-        {% for x in django %}
-            <li><a href="{{x.get_absolute_url}}">{{x}}</a></li>
-        {% endfor %}
-        </ul>    
-    </div>
-    <a data-bs-toggle="collapse" href="#javascript" role="button" aria-expanded="false" aria-controls="javascript"><h5>JavaScript</h5></a>
-    <div class="collapse" id="javascript">
-        <ul>
-        {% for x in javascript %}
-            <li><a href="{{x.get_absolute_url}}">{{x}}</a></li>
-        {% endfor %}
-        </ul>      
-    </div>
-
-    <a data-bs-toggle="collapse" href="#react" role="button" aria-expanded="false" aria-controls="react"><h5>React</h5></a>
-    <div class="collapse" id="react">
-        <ul>
-        {% for x in react  %}
-            <li><a href="{{x.get_absolute_url}}">{{x}}</a></li>
-        {% endfor %}
-        </ul>    
-    </div>
-
-    </div>
+{% include 'filter.html' %}
 <!--BLOG SECTION-->
         <div class="col-9 p-4">
             <h4 class="display-1">Blog</h4>

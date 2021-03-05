@@ -77,10 +77,70 @@ def blog(request):
 def blog_language(request, language):
     """ Filter blog posts on language """
     blog = Blog.objects.filter(language=language)
-    return render(request, 'blog-language.html', {'blogs': blog})
+    current_language = language
+    # FILTER OPTIONS ON LANGUAGES
+    python_count = Blog.objects.filter(language='python').count()
+    javascript_count = Blog.objects.filter(language='javascript').count()
+    react_count = Blog.objects.filter(language='react').count()
+    django_count = Blog.objects.filter(language='django').count()
+    other_count = Blog.objects.filter(language='other').count()
+    python = Blog.objects.filter(language='python')
+    javascript = Blog.objects.filter(language='javascript')
+    react = Blog.objects.filter(language='react')
+    django = Blog.objects.filter(language='django')
+    other = Blog.objects.filter(language='other')
+
+    latest = Blog.objects.order_by('-created_at')[:5]
+
+    context = {
+        'language': current_language,
+        'blogs': blog,
+        'python': python,
+        'javascript': javascript,
+        'react': react,
+        'django': django,
+        'other': other,
+        'pc': python_count,
+        'jc': javascript_count,
+        'rc': react_count,
+        'dc': django_count,
+        'oc': other_count,
+        'latest': latest
+        }
+    return render(request, 'blog-language.html', context)
 
 
 def blog_post(request, slug):
     """ Blog Post """
     post = Blog.objects.get(slug=slug)
-    return render(request, 'blog-post.html', {'post':post})
+
+    # FILTER OPTIONS ON LANGUAGES
+    python_count = Blog.objects.filter(language='python').count()
+    javascript_count = Blog.objects.filter(language='javascript').count()
+    react_count = Blog.objects.filter(language='react').count()
+    django_count = Blog.objects.filter(language='django').count()
+    other_count = Blog.objects.filter(language='other').count()
+    python = Blog.objects.filter(language='python')
+    javascript = Blog.objects.filter(language='javascript')
+    react = Blog.objects.filter(language='react')
+    django = Blog.objects.filter(language='django')
+    other = Blog.objects.filter(language='other')
+
+    latest = Blog.objects.order_by('-created_at')[:5]
+
+    context = {
+        'post': post,
+        'python': python,
+        'javascript': javascript,
+        'react': react,
+        'django': django,
+        'other': other,
+        'pc': python_count,
+        'jc': javascript_count,
+        'rc': react_count,
+        'dc': django_count,
+        'oc': other_count,
+        'latest': latest
+        }
+    return render(request, 'blog-post.html', context)
+
