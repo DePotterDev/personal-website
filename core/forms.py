@@ -3,9 +3,9 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout
 
 class ContactForm(forms.Form):
-    contact_name = forms.CharField(required=True)
-    contact_email = forms.EmailField(required=True)
-    message = forms.CharField(
+    contact_name = forms.CharField(label='Nome',required=True)
+    contact_email = forms.EmailField(label='Email',required=True)
+    message = forms.CharField(label='Mensagem',
         required=True,
         widget=forms.Textarea
     )

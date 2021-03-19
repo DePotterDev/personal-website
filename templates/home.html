@@ -130,70 +130,93 @@
         <h2 class="title mb-3">Projetos 🛠</h2>
         <p class="mb-5">Trabalhar com Python é JavaScript<br>
     Construir Web Scraping applicativos em Scrapy ou BeautifulSoup, <br>
-    sites ou API’s com Django. Quer mais projetos? <a class="link" href="#">Visite GitHub..</a></p>
+    sites ou API’s com Django. Quer mais projetos? <a class="link" href="https://github.com/DePotterDev" target="_blank">Visite GitHub..</a></p>
         <div class="row">
 <!--Cards-->
             <div class="col-3">
-                <div class="card">
-                    <div class="card-body bg-green border-darkgreen">
-                        <h5 class="card-title">Webshop</h5>
-                        <p class="card-text">An e-commerce website build from scratch in Django. It has following functionalities: a payment gateway, checkout form, delivery calculator and more.</p>
-                        <div class="row">
-                            <div class="col">
-                                <p class="card-link javascript">JavaScript</p>
+                <div class="card bg-green border-darkgreen">
+                    <img src="{% static 'media/fipe-api.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{project.0.name}}</h5>
+                        <div style="height:140px">
+                        <p class="card-text">{{project.0.description|truncatechars:150}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <a class="icon icon-github-green" href="{{project.0.html_url}}"></a>
+                                <a class="icon icon-website-green ms-2" href="https://depotterdev.github.io/API-FIPE/"></a>
                             </div>
-                            <div class="col">
-                                <p class="card-link django">Django</p>
+                            <div>
+                                <p class="card-link django">JavaScript | API</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-3">
-                <div class="card">
-                    <div class="card-body bg-green border-darkgreen">
-                        <h5 class="card-title">Project Management System</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div class="row">
-                            <div class="col">
-                                <p class="card-link javascript">JavaScript</p>
+                <div class="card bg-green border-darkgreen">
+                    <img src="{% static 'media/pms-taskmaster.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{project.1.name}}</h5>
+                        <div style="height:140px">
+                        <p class="card-text">{{project.1.description|truncatechars:150}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <a class="icon icon-github-green" href="{{project.1.html_url}}"></a>
+                                <a class="icon icon-website-green ms-2" href="http://laurensdp.pythonanywhere.com/ " target="_blank"></a>
                             </div>
-                            <div class="col">
-                                <p class="card-link django">Django</p>
+                            <div>
+                                <p class="card-link django">Django | SQLite</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-3">
-                <div class="card">
-                    <div class="card-body bg-green border-darkgreen">
-                        <h5 class="card-title">Fetch API</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div class="row">
-                            <div class="col">
-                                <p class="card-link javascript">JavaScript</p>
+                <div class="card bg-green border-darkgreen">
+                    <img src="{% static 'media/webshop.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{project.10.name}}</h5>
+                        <div style="height:140px">
+                        <p class="card-text">{{project.10.description|truncatechars:150}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <a class="icon icon-github-green" href="{{project.10.html_url}}"></a>
+                                <a class="icon icon-website-green ms-2" href="#"></a>
+                            </div>
+                            <div>
+                                <p class="card-link django">Django | SQLite</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-3">
-                <div class="card">
-                    <div class="card-body bg-green border-darkgreen">
-                        <h5 class="card-title">Personal Website</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div class="row">
-                            <div class="col">
-                                <p class="card-link javascript">JavaScript</p>
+                <div class="card bg-green border-darkgreen">
+                    <img src="{% static 'media/contactbook.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{project.17.name}}</h5>
+                        <div style="height:140px">
+                        <p class="card-text">{{project.17.description|truncatechars:150}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <a class="icon icon-github-green" href="{{project.17.html_url}}"></a>
                             </div>
-                            <div class="col">
-                                <p class="card-link django">Django</p>
-                            </div>
+                            <div>
+                                <p class="card-link django">Python | PyQt6 | SQLite</p>
+                            </div>                                                          
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
 <!--End cards-->
         </div>
     </div>
@@ -209,11 +232,12 @@
 <!--RIGHT COLUMN-->
         <div class="col">
             <h2 class="title">Sobre  👨‍💻</h2>
-            <p>Problem solving minded and creative<br>
-            I studied graphic design in high school and a few years of graphic design in college.
-            <br>
-            Worked through my career in sales and as a technical support agent for<br>
-            companies like Groupon, Cisco, Belkin and GoDaddy.</p>
+            <p>Belga, nascido em 1988. Trabalhou como consultor de<br>
+            vendas e como agente de suporte técnico para<br>
+            empresas como Groupon, Cisco, Belkin e GoDaddy.<br>
+            Programador autodidata e com aprendizado contínuo.<br>
+            Estou procurando uma função onde possa crescer e continuar <br>
+            a aprender com outros membros experientes da equipe.</p>
         </div>
     </div>
 </div>
@@ -225,11 +249,11 @@
             <h2 class="ms-5 mb-3 color-darkgreen title" id="contact">Contato</h2>
         </div>
         <div class="row p-5 mx-5 bg-light">
-        <h4 class="ms-5 p-0 display-5">Solte Uma Linha</h4>
-        <p class="ms-5 p-0 pb-5">Eu vou ressonar assim que possível.</p>
+        <h4 class="ms-5 p-0 display-5">Deixe Um Recado</h4>
+        <p class="ms-5 p-0 pb-5">Eu vou retornar assim que possível.</p>
 <!--lEFT COLUMN-->
         <div class="col ms-5 p-0">
-            <h3 class="mb-3">Contact info:</h3>
+            <h3 class="mb-3">Contato:</h3>
             <p>depotter.laurens@gmail.com</p>
             <p>Cellular: 11 96 7750 753</p>
 
@@ -242,7 +266,7 @@
                 <form method="POST">
                     {% csrf_token %}
                     {% crispy form %}
-                    <button type="submit" class="btn btn-lg btn-darkgreen mt-5">Submit</button>
+                    <button type="submit" class="btn btn-lg btn-darkgreen mt-5">Enviar</button>
                 </form>
             </div>
         </div>

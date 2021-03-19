@@ -19,6 +19,10 @@ def home(request):
     response = requests.get('https://api.github.com/users/depotterdev/repos?per_page=5&sort=updated')
     repo = response.json()
 
+    # Project Section
+    projects = requests.get('https://api.github.com/users/DePotterDev/repos?sort=created&direction=asc')
+    project = projects.json()
+
     """ Contact Form """
     if request.method == 'GET':
         form = ContactForm()
@@ -31,12 +35,12 @@ def home(request):
             html_message = render_to_string('contact_template.txt', {'from_email': from_email, 'message': message, 'subject': subject})
             plain_message = strip_tags(html_message)
             try:
-                send_mail('Message from : ' + subject, plain_message, from_email, ['email@gmail.com'])
+                send_mail('Message from : ' + subject, plain_message, from_email, ['depotter.laurens@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect('index')
+            return redirect('/')
 
-    context = {'repo': repo, 'range': range(4), 'form': ContactForm}
+    context = {'repo': repo, 'project': project, 'range': range(4), 'form': ContactForm}
     return render(request, 'home.html', context)
 
 
