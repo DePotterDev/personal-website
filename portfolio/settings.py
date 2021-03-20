@@ -18,7 +18,7 @@ if os.environ.get('DEBUG') == 'TRUE':
 elif os.environ.get('DEBUG') == 'FALSE':
     DEBUG = False
 
-ALLOWED_HOSTS = ['www.depotter.dev']
+ALLOWED_HOSTS = ['www.depotter.dev', '143.110.150.88']
 
 
 # Application definition
