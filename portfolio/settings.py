@@ -15,7 +15,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['143.198.226.108', 'depotter.dev', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['143.198.226.108', 'depotter.dev', '*.depotter.dev']
 
 
 # Application definition
