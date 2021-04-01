@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.fields import TextField
 from django.shortcuts import reverse
-from django_quill.fields import QuillField
+from ckeditor.fields import RichTextField
 
 
 class Blog(models.Model):
@@ -16,7 +16,7 @@ class Blog(models.Model):
 
     title = models.CharField(max_length=50)
     description = TextField(max_length=200)
-    text = QuillField()
+    body = RichTextField(blank=True, null=True)
     language = models.CharField(choices=LANGUAGES_CHOICES, max_length=50)
     slug = models.SlugField()
     created_at = models.DateTimeField(auto_now_add=True)

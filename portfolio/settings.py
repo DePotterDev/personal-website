@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = DEBUG_PROD
 
-ALLOWED_HOSTS = ['143.198.226.108', 'depotter.dev', '*.depotter.dev']
+ALLOWED_HOSTS = ['143.198.226.108', 'depotter.dev', '*.depotter.dev', '127.0.0.1' ]
 
 
 # Application definition
@@ -30,8 +30,8 @@ INSTALLED_APPS = [
     'core',
 
     #Third Party Apps
-    'django_quill',
     'crispy_forms',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -150,7 +150,5 @@ EMAIL_HOST_USER = SECRET_GMAIL
 EMAIL_HOST_PASSWORD = SECRET_GMAIL_KEY
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-
-
 
 # ALLOWED_HOSTS += ip_addresses()

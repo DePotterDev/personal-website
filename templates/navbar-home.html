@@ -9,18 +9,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      {% if request.path == '/' %}
         <li class="nav-item">{% block nav-skills %}<a class="nav-link" aria-current="page" href="#skills">Habilidades</a>{% endblock nav-skills %}
         </li>
         <li class="nav-item">{% block nav-project %}<a class="nav-link" href="#projects">Projetos</a>{% endblock nav-project %}
         </li>
         <li class="nav-item dropdown">{% block nav-about %}<a class="nav-link" href="#about">Sobre</a>{% endblock nav-about %}
         </li>
+          {% endif %}
         <li class="nav-item">{% block nav-blog %}<a class="nav-link" href="{% url 'core:blog' %}">Blog</a>
         {% endblock nav-blog %}</li>
         <li class="nav-item">
+        {% if request.path == '/' %}
           {% block contact %}
             <a class="nav-link" href="#contact">Contato</a>
           {% endblock contact %}
+        {% endif %}
         </li>
       </ul>
       <div class="d-flex">
