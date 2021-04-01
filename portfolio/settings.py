@@ -31,7 +31,7 @@ INSTALLED_APPS = [
 
     #Third Party Apps
     'crispy_forms',
-    'ckeditor'
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +152,11 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
 # ALLOWED_HOSTS += ip_addresses()
+
+# CKeditor
+CKEDITOR_CONFIGS = {
+    "default": {
+        "removePlugins": "stylesheetparser",
+        'allowedContent': True,
+    }
+}
