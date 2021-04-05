@@ -43,81 +43,20 @@
 
 <!--GITHUB API-->
             <div class="col-6 ps-5">
-                <h4>Latest GitHub Repo Updates</h4>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Repo</th>
-                            <th scope="col">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><a class="link" href="{{repo.0.html_url}}" target="_blank">{{repo.0.name}}</a></td>
-                            <td>
-                                {% if repo.0.description %}
-                                    {{repo.0.description}}
-                                    {{repo.0.created_at|date:"c" }}
-                                {% else %}
-                                    <p>This repo has no description yet.. Working on it!</p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td><a class="link" href="{{repo.1.html_url}}" target="_blank">{{repo.1.name}}</a></td>
-                            <td>
-                                {% if repo.1.description %}
-                                    {{repo.1.description}}
-                                {% else %}
-                                    <p>This repo has no description yet.. Working on it!</p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td><a class="link" href="{{repo.2.html_url}}" target="_blank">{{repo.2.name}}</a></td>
-                            <td>
-                                {% if repo.2.description %}
-                                    {{repo.2.description}}
-                                {% else %}
-                                    <p>This repo has no description yet.. Working on it!</p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td><a class="link" href="{{repo.3.html_url}}" target="_blank">{{repo.3.name}}</a></td>
-                            <td>
-                                {% if repo.3.description %}
-                                    {{repo.3.description}}         
-                                {% else %}
-                                    <p>This repo has no description yet.. Working on it!</p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td><a class="link" href="{{repo.4.html_url}}" target="_blank">{{repo.4.name}}</a></td>
-                            <td>
-                                {% if repo.4.description %}
-                                    {{repo.4.description}}
-                                {% else %}
-                                    <p>This repo has no description yet.. Working on it!</p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                    </tbody>
-                
-                </table>
                 <div class="row">
-                    <div class="col">                  
-                    </div>
-                    <div class="col">
-                        <p></p>
-                    </div>
+                <h2>Certificados</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-info"><a href="https://www.caelum.com.br/" target="_blank">Caelum</a></li>
+                    <li class="list-group-item"><a href="{% static 'media/Caelum-Front-End.jpeg' %}" target="_blank">Front-End</a></li>
+                    <li class="list-group-item"><a href="{% static 'media/Caelum-HTML-CSS-JS.jpeg' %}" target="_blank">HTML, CSS & JavaScript</a></li>
+                    <li class="list-group-item"><a href="{% static 'media/Caelum-Logic-JavaScript.jpeg' %}" target="_blank">Logic of Programming with JavaScript</a></li>
+                    <li class="list-group-item"><a href="{% static 'media/Caelum-Modern-JavaScript.jpeg' %}" target="_blank">Modern JavaScript</a></li>
+                    <li class="list-group-item"><a href="{% static 'media/Caelum-Nodejs.jpeg' %}" target="_blank">Node.js & Express</a></li>
+                    <li class="list-group-item list-group-item-info"><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+                    <li class="list-group-item"><a href="{% static 'media/udemy-cert-js.pdf' %}" target="_blank">JavaScript</a></li>
+                    <li class="list-group-item list-group-item-info"><a href="https://www.hackerrank.com/" target="_blank">HackerRank</a></li>
+                    <li class="list-group-item"><a href="{% static 'media/HackerRank-Python-B.png' %}" target="_blank">Python</a></li>
+                </ul>
                 </div>
             </div>
             <p class="text-muted">Também Bootstrap, Linux, Nginx, Test Driven Development, Node.js e PostgreSQL</p>   
@@ -126,7 +65,7 @@
 </div>
 
 <!--PROJECTS-->
-<div style="background-color:#ebfaf7;">
+<div style="background-color:#e2eff1;">
     <div id="projects" class="container py-5">
         <h2 class="title mb-3">Projetos 🛠</h2>
         <p class="mb-5">Trabalhar com Python é JavaScript<br>
@@ -219,12 +158,87 @@
             </div>
             
 <!--End cards-->
+ <!--Github API-->
+    <div class="py-5">
+    <h4>Latest GitHub Repo Updates</h4>
+        <table class="table table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Repo</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-light">
+                    <th scope="row">1</th>
+                    <td><a class="link" href="{{repo.0.html_url}}" target="_blank">{{repo.0.name}}</a></td>
+                    <td>
+                        {% if repo.0.description %}
+                            {{repo.0.description}}
+                            {{repo.0.created_at|date:"c" }}
+                        {% else %}
+                            <p>This repo has no description yet.. Working on it!</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr class="table-light">
+                    <th scope="row">2</th>
+                    <td><a class="link" href="{{repo.1.html_url}}" target="_blank">{{repo.1.name}}</a></td>
+                    <td>
+                        {% if repo.1.description %}
+                            {{repo.1.description}}
+                        {% else %}
+                            <p>This repo has no description yet.. Working on it!</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr class="table-light">
+                    <th scope="row">3</th>
+                    <td><a class="link" href="{{repo.2.html_url}}" target="_blank">{{repo.2.name}}</a></td>
+                    <td>
+                        {% if repo.2.description %}
+                            {{repo.2.description}}
+                        {% else %}
+                            <p>This repo has no description yet.. Working on it!</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr class="table-light">
+                    <th scope="row">4</th>
+                    <td><a class="link" href="{{repo.3.html_url}}" target="_blank">{{repo.3.name}}</a></td>
+                    <td>
+                        {% if repo.3.description %}
+                            {{repo.3.description}}         
+                        {% else %}
+                            <p>This repo has no description yet.. Working on it!</p>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr class="table-light">
+                    <th scope="row">5</th>
+                    <td><a class="link" href="{{repo.4.html_url}}" target="_blank">{{repo.4.name}}</a></td>
+                    <td>
+                        {% if repo.4.description %}
+                            {{repo.4.description}}
+                        {% else %}
+                            <p>This repo has no description yet.. Working on it!</p>
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
         </div>
     </div>
 </div>
 
 <!--ABOUT SECTION-->
 <div id="about" class="container py-5 my-5">
+
+
+
     <div class="row">
 <!--LEFT COLUMN-->
         <div class="col">
